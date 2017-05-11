@@ -2,16 +2,14 @@
 title: API Reference
 
 language_tabs:
-  - shell
-  - ruby
-  - python
-  - javascript
+  - JSON
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - Session
+  - TeamMember
   - errors
 
 search: true
@@ -25,165 +23,65 @@ We have language bindings in Shell, Ruby, and Python! You can view code examples
 
 This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
-# Authentication
+# Request
 
-> To authorize, use this code:
+> Request Example
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+```json  
+    {
+      "id": "2561B039-1E94-49B9-9A63-6F364E8C7A8E",
+      "req": "USER.SESSION#CREATE",
+      "args": {
+        "login": "pupkin",
+        "password": "qwert",
+        "ttl": 0,
+      }
+    }
 ```
 
-```python
-import kittn
+### Request Structure
 
-api = kittn.authorize('meowmeowmeow')
-```
+| Parameter |  Type     |             Description |
+|------|---------|----------------------------------|
+| id   |  String |  Request UUID                    |
+| req  |  String |  Request URL                     |
+| args |  JSON   |  Request Parameters, can be empty |
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
 
-```javascript
-const kittn = require('kittn');
+# Response
 
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
+> Success Response Example
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+    {
+      "rep": "2561B039-1E94-49B9-9A63-6F364E8C7A8E",
+      "data": {
+          "pin_code": "Lgi7TtJn5Jo1f5aWf66vMQ",
+          "salt": "y1H3gF0ZraklErj683dbpA",
+          "session_id": "SAvsVn1WoKtucoR188GOug",
+          "user_id": "pupkin",
+          "ttl": 0,
+      },
+      "err": null
+    }
 ```
 
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+> Error Response Example
 
 ```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
+    {
+      "rep": "787357F1-E3F4-4BFB-90B4-8978FE87C9EE",
+      "err": {
+        "code": "ERR:INVALID_CREDENTIALS",
+        "msg": "Error",
+      }
+    }
 ```
 
-This endpoint retrieves a specific kitten.
+### Response Structure
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
+| Parameter |  Type     |             Description |
+|------|---------|----------------------------------|
+| rep  |  String |  Request UUID for this response  |
+| data |  JSON   |  Response data, can be empty     |
+| err  |  JSON   |  Error data, can be empty        |
