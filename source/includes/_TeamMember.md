@@ -36,8 +36,7 @@ user_id | String | yes
 
 ```json
     {
-        "users":
-        [
+        "users": [
           {
             "user_id": "vasia_pupkin",
             "email": "vasia@pupkin.com",
