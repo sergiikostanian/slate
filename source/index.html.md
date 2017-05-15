@@ -15,6 +15,7 @@ includes:
   - TeamCrypto
   - TeamMember
   - Workspace
+  - Participant
   - BaseTypes
   - errors
 
