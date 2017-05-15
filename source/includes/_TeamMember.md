@@ -84,7 +84,7 @@ user_id | String | yes
 | Parameter   |  Type     |  Required |
 |-------------|-----------|-----------|
 | team_id     |  String   |  yes      |
-| role        |  RoleItem |  yes      |
+| role        |  [RoleItem](#roleitem) |  yes      |
 | open_at     |  Date     |  yes      |
 | email       |  String   |           |
 | usage_limit |  Int      |           |

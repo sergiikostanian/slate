@@ -70,9 +70,7 @@
 | first_name    |  String   |           |
 | last_name     |  String   |           |
 | delete_avatar |  Bool     |           |
-| presence      |  Presence |           |
-
-`TODO: Add Presence to Basic Types`
+| presence      |  [Presence](#presence) |           |
 
 ## Get User
 

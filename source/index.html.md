@@ -10,7 +10,9 @@ toc_footers:
 includes:
   - Session
   - User
+  - Password
   - TeamMember
+  - BaseTypes
   - errors
 
 search: true
@@ -19,7 +21,7 @@ search: true
 # Introduction
 
 Welcome to the StrongBox API! Here you will see awesome introduction soon...
-We have response examples in JSON, you can view it in the dark area on the right.
+We have examples in JSON, you can view it in the dark area on the right.
 
 # Request
 
