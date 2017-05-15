@@ -11,6 +11,8 @@ includes:
   - Session
   - User
   - Password
+  - Team
+  - TeamCrypto
   - TeamMember
   - BaseTypes
   - errors
