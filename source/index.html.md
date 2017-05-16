@@ -18,6 +18,7 @@ includes:
   - Participant
   - Stream
   - Storage
+  - Crypto
   - BaseTypes
   - errors
 
