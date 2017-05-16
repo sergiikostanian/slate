@@ -19,6 +19,7 @@ includes:
   - Stream
   - Storage
   - Crypto
+  - Notification
   - BaseTypes
   - errors
 
