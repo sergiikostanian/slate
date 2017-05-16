@@ -20,6 +20,7 @@ includes:
   - Storage
   - Crypto
   - Notification
+  - Channel
   - BaseTypes
   - errors
 
