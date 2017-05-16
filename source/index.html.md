@@ -16,6 +16,8 @@ includes:
   - TeamMember
   - Workspace
   - Participant
+  - Stream
+  - Storage
   - BaseTypes
   - errors
 

@@ -54,6 +54,14 @@ Users role in app. Can have following values of __String__ type:
 
 `PARTICIPANT`
 
+## PayloadFormat
+
+Payload format. Can have following values of __String__ type:
+
+`witcrypt`
+
+`file-attachment`
+
 ## SeenBy
 
 > Example
