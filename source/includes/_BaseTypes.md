@@ -110,3 +110,18 @@ File structure is a JSON that contains following parameter:
 |------------------|------------------|--------------------------------------|
 | target_pub_key   |  String          |  User public key                     |
 | crypto_container |  [CryptoContainer](#cryptocontainer) |  Structure of encrypted pice of data |
+
+## Metadata
+
+| Parameter | Type                    | Description          |
+|-----------|-------------------------|----------------------|
+| animated  | Bool                    |                      |
+| preview   | [ImageSize](#imagesize) | Preview image size   |
+| thumbnail | [ImageSize](#imagesize) | Thumbnail image size |
+
+## ImageSize
+
+| Parameter | Type | Description  |
+|-----------|------|--------------|
+| width     | Int  | Image width  |
+| height    | Int  | Image height |

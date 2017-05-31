@@ -21,6 +21,7 @@ includes:
   - Crypto
   - Notification
   - Channel
+  - UploadFile
   - BaseTypes
   - errors
 
@@ -29,8 +30,7 @@ search: true
 
 # Introduction
 
-Welcome to the StrongBox API! Here you will see awesome introduction soon...
-We have examples in JSON, you can view it in the dark area on the right.
+Welcome to the StrongBox API! Here you can learn how to work with StrongBox endpoint. We have examples in JSON, you can view it in the dark area on the right. All requests are works with socket, except [file uploading](#upload-file), this is a multipart form data HTTP request.
 
 # Request
 
